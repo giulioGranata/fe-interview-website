@@ -51,7 +51,6 @@ describe("UserModal", () => {
     expect(screen.getByText("John Doe")).toBeInTheDocument();
     expect(screen.getByText("Software Engineer")).toBeInTheDocument();
     expect(screen.getByText("Engineering")).toBeInTheDocument();
-    expect(screen.getByText("Acme Corp")).toBeInTheDocument();
     expect(screen.getByText("john.doe@example.com")).toBeInTheDocument();
     expect(screen.getByText("ADMIN")).toBeInTheDocument();
   });

@@ -20,7 +20,7 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
         onClose();
       }
     },
-    [onClose],
+    [onClose]
   );
 
   // Focus trap
@@ -44,7 +44,7 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
         onClose();
       }
     },
-    [onClose],
+    [onClose]
   );
 
   if (!isOpen || !user) {
@@ -80,14 +80,14 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
           <div className="user-modal__info-grid">
             <div className="user-modal__info-item">
               <span className="user-modal__info-label">Team</span>
-              <span className="user-modal__info-value">{user.company.department}</span>
+              <span className="user-modal__info-value">
+                {user.company.department}
+              </span>
             </div>
             <div className="user-modal__info-item">
-              <span className="user-modal__info-label">Company</span>
-              <span className="user-modal__info-value">{user.company.name}</span>
-            </div>
-            <div className="user-modal__info-item user-modal__info-item--full">
-              <span className="user-modal__info-label">Contact Information</span>
+              <span className="user-modal__info-label">
+                Contact Information
+              </span>
               <span className="user-modal__info-value">{user.email}</span>
             </div>
           </div>
@@ -95,9 +95,10 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
           <div className="user-modal__details">
             <span className="user-modal__info-label">Other details</span>
             <p className="user-modal__details-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
             </p>
           </div>
         </div>
