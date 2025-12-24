@@ -1,0 +1,87 @@
+.role-filter {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.role-filter__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0;
+  float: none;
+}
+
+.role-filter__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.role-filter__button {
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.role-filter__button:hover {
+  border-color: var(--color-text-tertiary);
+}
+
+/* Selected states with role colors */
+.role-filter__button--selected.role-filter__button--admin {
+  color: white;
+  background-color: var(--color-role-admin);
+  border-color: var(--color-role-admin);
+}
+
+.role-filter__button--selected.role-filter__button--editor {
+  color: white;
+  background-color: var(--color-role-editor);
+  border-color: var(--color-role-editor);
+}
+
+.role-filter__button--selected.role-filter__button--viewer {
+  color: white;
+  background-color: var(--color-role-viewer);
+  border-color: var(--color-role-viewer);
+}
+
+.role-filter__button--selected.role-filter__button--guest {
+  color: white;
+  background-color: var(--color-role-guest);
+  border-color: var(--color-role-guest);
+}
+
+.role-filter__button--selected.role-filter__button--owner {
+  color: white;
+  background-color: var(--color-role-owner);
+  border-color: var(--color-role-owner);
+}
+
+.role-filter__button--selected.role-filter__button--inactive {
+  color: white;
+  background-color: var(--color-role-inactive);
+  border-color: var(--color-role-inactive);
+}
+
+/* Responsive */
+@media (max-width: 599px) {
+  .role-filter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
