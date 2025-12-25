@@ -7,7 +7,14 @@ interface RoleFilterProps {
   onChange: (roles: UserRole[]) => void;
 }
 
-const ALL_ROLES: UserRole[] = ["ADMIN", "EDITOR", "VIEWER", "GUEST", "OWNER", "INACTIVE"];
+const ALL_ROLES: UserRole[] = [
+  "ADMIN",
+  "EDITOR",
+  "VIEWER",
+  "GUEST",
+  "OWNER",
+  "INACTIVE",
+];
 
 export function RoleFilter({ selectedRoles, onChange }: RoleFilterProps) {
   const handleRoleToggle = useCallback(
@@ -18,7 +25,7 @@ export function RoleFilter({ selectedRoles, onChange }: RoleFilterProps) {
         onChange([...selectedRoles, role]);
       }
     },
-    [selectedRoles, onChange],
+    [selectedRoles, onChange]
   );
 
   const handleKeyDown = useCallback(
@@ -28,12 +35,12 @@ export function RoleFilter({ selectedRoles, onChange }: RoleFilterProps) {
         handleRoleToggle(role);
       }
     },
-    [handleRoleToggle],
+    [handleRoleToggle]
   );
 
   return (
     <fieldset className="role-filter" aria-label="Filter by role">
-      <legend className="role-filter__label">FILTER BY:</legend>
+      <div className="role-filter__label">FILTER BY:</div>
       <div className="role-filter__options">
         {ALL_ROLES.map((role) => {
           const isSelected = selectedRoles.includes(role);

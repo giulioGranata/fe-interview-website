@@ -15,16 +15,16 @@
 }
 
 .user-card__header {
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   padding-bottom: 0;
 }
 
 .user-card__body {
   flex: 1;
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
 }
 
 .user-card__name {
@@ -71,7 +71,7 @@
 }
 
 .user-card__footer {
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   padding-top: 0;
 }
 

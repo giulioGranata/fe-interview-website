@@ -6,7 +6,8 @@
 
 /* Header */
 .app__header {
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-2xl) 0;
+  text-align: center;
 }
 
 .app__title {
@@ -30,20 +31,23 @@
 .app__search-section {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 }
 
 /* Results Section */
 .app__results-section {
   min-height: 200px;
+  border-top: 1px solid black;
+  padding-top: var(--spacing-xl);
 }
 
 /* User Grid */
 .user-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl);
   list-style: none;
   padding: 0;
   margin: 0;

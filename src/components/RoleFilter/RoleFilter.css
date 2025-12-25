@@ -1,39 +1,41 @@
 .role-filter {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
   gap: var(--spacing-md);
-  flex-wrap: wrap;
   border: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 .role-filter__label {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: 0;
-  float: none;
 }
 
 .role-filter__options {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--spacing-sm);
 }
 
 .role-filter__button {
   padding: var(--spacing-xs) var(--spacing-md);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   color: var(--color-text-secondary);
   background-color: var(--color-surface);
   border: 2px solid var(--color-border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-lg);
   transition: all var(--transition-fast);
 }
 
@@ -82,6 +84,11 @@
 @media (max-width: 599px) {
   .role-filter {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .role-filter__label {
+    text-align: center;
+    margin-bottom: var(--spacing-xs);
   }
 }
