@@ -11,10 +11,11 @@
 }
 
 .app__title {
-  font-size: var(--font-size-title);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-app-title);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
-  margin: 0;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .app__title-highlight {

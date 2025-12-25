@@ -34,7 +34,9 @@ export function App() {
       const data = await fetchUsers();
       setUsers(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An unexpected error occurred");
+      setError(
+        err instanceof Error ? err.message : "An unexpected error occurred"
+      );
     } finally {
       setLoading(false);
     }
@@ -85,7 +87,12 @@ export function App() {
     }
 
     if (filteredUsers.length === 0) {
-      return <EmptyState searchQuery={appliedSearchQuery} hasFilters={selectedRoles.length > 0} />;
+      return (
+        <EmptyState
+          searchQuery={appliedSearchQuery}
+          hasFilters={selectedRoles.length > 0}
+        />
+      );
     }
 
     return (
@@ -111,13 +118,19 @@ export function App() {
 
       <main className="app__main">
         <div className="container">
-          <section className="app__search-section" aria-label="Search and filters">
+          <section
+            className="app__search-section"
+            aria-label="Search and filters"
+          >
             <SearchInput
               value={searchQuery}
               onChange={handleSearchChange}
               onSearch={handleSearch}
             />
-            <RoleFilter selectedRoles={selectedRoles} onChange={handleRoleChange} />
+            <RoleFilter
+              selectedRoles={selectedRoles}
+              onChange={handleRoleChange}
+            />
           </section>
 
           <section className="app__results-section" aria-label="Search results">
@@ -126,7 +139,11 @@ export function App() {
         </div>
       </main>
 
-      <UserModal user={selectedUser} isOpen={isModalOpen} onClose={handleCloseModal} />
+      <UserModal
+        user={selectedUser}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 }
