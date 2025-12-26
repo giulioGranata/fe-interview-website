@@ -14,20 +14,21 @@ export function UserCard({ user, onViewDetails }: UserCardProps) {
     <article className="user-card" aria-label={`User card for ${fullName}`}>
       <header className="user-card__header">
         <RoleBadge role={user.role} />
+        <h3 className="user-card__name">{fullName}</h3>
+        <p className="user-card__job-title">{user.jobTitle}</p>
       </header>
 
       <div className="user-card__body">
-        <h3 className="user-card__name">{fullName}</h3>
-        <p className="user-card__job-title">{user.company.title}</p>
-
         <div className="user-card__info">
           <div className="user-card__info-item">
             <span className="user-card__info-label">Team</span>
-            <span className="user-card__info-value">{user.company.department}</span>
+            <span className="user-card__info-value">{user.team}</span>
           </div>
           <div className="user-card__info-item">
             <span className="user-card__info-label">Contact</span>
-            <span className="user-card__info-value user-card__email">{user.email}</span>
+            <span className="user-card__info-value user-card__email">
+              {user.email}
+            </span>
           </div>
         </div>
       </div>

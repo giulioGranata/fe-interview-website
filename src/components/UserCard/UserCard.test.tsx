@@ -10,11 +10,8 @@ const mockUser: User = {
   lastName: "Doe",
   email: "john.doe@example.com",
   role: "ADMIN",
-  company: {
-    title: "Software Engineer",
-    department: "Engineering",
-    name: "Acme Corp",
-  },
+  team: "Engineering",
+  jobTitle: "Software Engineer",
 };
 
 describe("UserCard", () => {
@@ -34,7 +31,7 @@ describe("UserCard", () => {
     expect(screen.getByText("Software Engineer")).toBeInTheDocument();
   });
 
-  it("renders user team/department", () => {
+  it("renders user team", () => {
     const onViewDetails = vi.fn();
 
     render(<UserCard user={mockUser} onViewDetails={onViewDetails} />);
@@ -76,6 +73,8 @@ describe("UserCard", () => {
 
     render(<UserCard user={mockUser} onViewDetails={onViewDetails} />);
 
-    expect(screen.getByRole("article", { name: /user card for john doe/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("article", { name: /user card for john doe/i })
+    ).toBeInTheDocument();
   });
 });

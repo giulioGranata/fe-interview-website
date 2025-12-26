@@ -69,20 +69,17 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
       <div className="user-modal" ref={modalRef} tabIndex={-1}>
         <header className="user-modal__header">
           <RoleBadge role={user.role} />
-        </header>
-
-        <div className="user-modal__body">
           <h2 id="modal-title" className="user-modal__name">
             {fullName}
           </h2>
-          <p className="user-modal__job-title">{user.company.title}</p>
+          <p className="user-modal__job-title">{user.jobTitle}</p>
+        </header>
 
+        <div className="user-modal__body">
           <div className="user-modal__info-grid">
             <div className="user-modal__info-item">
               <span className="user-modal__info-label">Team</span>
-              <span className="user-modal__info-value">
-                {user.company.department}
-              </span>
+              <span className="user-modal__info-value">{user.team}</span>
             </div>
             <div className="user-modal__info-item">
               <span className="user-modal__info-label">

@@ -9,7 +9,7 @@ const mockUsers: User[] = [
     lastName: "Doe",
     email: "john@example.com",
     role: "ADMIN",
-    company: { title: "Engineer", department: "Tech", name: "Acme" },
+    team: "Tech",
   },
   {
     id: 2,
@@ -17,7 +17,8 @@ const mockUsers: User[] = [
     lastName: "Smith",
     email: "jane@example.com",
     role: "EDITOR",
-    company: { title: "Designer", department: "Design", name: "Acme" },
+    team: "Design",
+    jobTitle: "Designer",
   },
   {
     id: 3,
@@ -25,7 +26,8 @@ const mockUsers: User[] = [
     lastName: "Johnson",
     email: "bob@example.com",
     role: "VIEWER",
-    company: { title: "Manager", department: "HR", name: "Acme" },
+    team: "HR",
+    jobTitle: "Manager",
   },
   {
     id: 4,
@@ -33,7 +35,8 @@ const mockUsers: User[] = [
     lastName: "Williams",
     email: "alice@example.com",
     role: "ADMIN",
-    company: { title: "Developer", department: "Tech", name: "Acme" },
+    team: "Tech",
+    jobTitle: "Developer",
   },
 ];
 
@@ -88,7 +91,9 @@ describe("filterUsersByRole", () => {
   it("filters by multiple roles", () => {
     const result = filterUsersByRole(mockUsers, ["ADMIN", "EDITOR"]);
     expect(result).toHaveLength(3);
-    expect(result.every((u) => ["ADMIN", "EDITOR"].includes(u.role))).toBe(true);
+    expect(result.every((u) => ["ADMIN", "EDITOR"].includes(u.role))).toBe(
+      true
+    );
   });
 
   it("returns empty array when no matching roles", () => {

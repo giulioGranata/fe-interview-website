@@ -1,4 +1,10 @@
-export type UserRole = "ADMIN" | "EDITOR" | "VIEWER" | "GUEST" | "OWNER" | "INACTIVE";
+export type UserRole =
+  | "ADMIN"
+  | "EDITOR"
+  | "VIEWER"
+  | "GUEST"
+  | "OWNER"
+  | "INACTIVE";
 
 export interface User {
   id: number;
@@ -6,11 +12,8 @@ export interface User {
   lastName: string;
   email: string;
   role: UserRole;
-  company: {
-    title: string;
-    department: string;
-    name: string;
-  };
+  team: string;
+  jobTitle: string;
 }
 
 export interface ApiState<T> {

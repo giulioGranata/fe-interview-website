@@ -10,11 +10,8 @@ const mockUser: User = {
   lastName: "Doe",
   email: "john.doe@example.com",
   role: "ADMIN",
-  company: {
-    title: "Software Engineer",
-    department: "Engineering",
-    name: "Acme Corp",
-  },
+  team: "Engineering",
+  jobTitle: "Software Engineer",
 };
 
 describe("UserModal", () => {
