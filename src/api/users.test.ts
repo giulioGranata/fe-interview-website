@@ -10,6 +10,7 @@ const mockUsers: User[] = [
     email: "john@example.com",
     role: "ADMIN",
     team: "Tech",
+    jobTitle: "Software Engineer",
   },
   {
     id: 2,
