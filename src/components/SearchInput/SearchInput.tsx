@@ -22,7 +22,7 @@ export function SearchInput({
       setInputValue(newValue);
       onChange(newValue);
     },
-    [onChange],
+    [onChange]
   );
 
   const handleKeyDown = useCallback(
@@ -31,7 +31,7 @@ export function SearchInput({
         onSearch();
       }
     },
-    [onSearch],
+    [onSearch]
   );
 
   const handleSearchClick = useCallback(() => {
@@ -43,18 +43,21 @@ export function SearchInput({
       <label htmlFor="search-input" className="search-input__label">
         WHAT ARE YOU LOOKING FOR?
       </label>
-      <div className="search-input__container">
-        <input
-          id="search-input"
-          type="text"
-          className="search-input__field"
-          value={inputValue}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-          placeholder={placeholder}
-          aria-label="Search users by name"
-        />
+      <div className="search-input__wrapper">
+        <div className="search-input__container">
+          <input
+            id="search-input"
+            type="text"
+            className="search-input__field"
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+            placeholder={placeholder}
+            aria-label="Search users by name"
+          />
+        </div>
         <button
+          id="search-input-button"
           type="button"
           className="search-input__button"
           onClick={handleSearchClick}
