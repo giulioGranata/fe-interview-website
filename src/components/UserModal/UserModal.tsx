@@ -20,7 +20,7 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
         onClose();
       }
     },
-    [onClose],
+    [onClose]
   );
 
   // Focus trap
@@ -44,7 +44,7 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
         onClose();
       }
     },
-    [onClose],
+    [onClose]
   );
 
   if (!isOpen || !user) {
@@ -66,7 +66,7 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
       aria-modal="true"
       aria-labelledby="modal-title"
     >
-      <div className="user-modal" ref={modalRef} tabIndex={-1}>
+      <div className="user-modal card" ref={modalRef} tabIndex={-1}>
         <header className="user-modal__header">
           <RoleBadge role={user.role} />
           <h2 id="modal-title" className="user-modal__name">
@@ -78,21 +78,30 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
         <div className="user-modal__body">
           <div className="user-modal__info-grid">
             <div className="user-modal__info-item">
-              <span className="user-modal__info-label">Team</span>
-              <span className="user-modal__info-value">{user.team}</span>
+              <span className="user-modal__info-label text-label">Team</span>
+              <span className="user-modal__info-value text-value">
+                {user.team}
+              </span>
             </div>
             <div className="user-modal__info-item">
-              <span className="user-modal__info-label">Contact Information</span>
-              <span className="user-modal__info-value">{user.email}</span>
+              <span className="user-modal__info-label text-label">
+                Contact Information
+              </span>
+              <span className="user-modal__info-value text-value">
+                {user.email}
+              </span>
             </div>
           </div>
 
           <div className="user-modal__details">
-            <span className="user-modal__info-label">Other details</span>
+            <span className="user-modal__info-label text-label">
+              Other details
+            </span>
             <p className="user-modal__details-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
             </p>
           </div>
         </div>
@@ -101,7 +110,7 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
           <button
             ref={closeButtonRef}
             type="button"
-            className="user-modal__close-button"
+            className="user-modal__close-button btn-primary"
             onClick={onClose}
             aria-label="Close modal"
           >

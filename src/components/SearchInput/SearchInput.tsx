@@ -22,7 +22,7 @@ export function SearchInput({
       setInputValue(newValue);
       onChange(newValue);
     },
-    [onChange],
+    [onChange]
   );
 
   const handleKeyDown = useCallback(
@@ -31,7 +31,7 @@ export function SearchInput({
         onSearch();
       }
     },
-    [onSearch],
+    [onSearch]
   );
 
   const handleSearchClick = useCallback(() => {
@@ -40,7 +40,7 @@ export function SearchInput({
 
   return (
     <div className="search-input">
-      <label htmlFor="search-input" className="search-input__label">
+      <label htmlFor="search-input" className="search-input__label text-label">
         WHAT ARE YOU LOOKING FOR?
       </label>
       <div className="search-input__wrapper">
@@ -59,9 +59,9 @@ export function SearchInput({
         <button
           id="search-input-button"
           type="button"
-          className="search-input__button"
+          className="search-input__button btn-primary"
           onClick={handleSearchClick}
-          aria-label="Search"
+          aria-label="Clear search and fetch results"
         >
           Search
         </button>

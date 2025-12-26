@@ -15,7 +15,6 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   line-height: 100%;
-  letter-spacing: 0%;
 }
 
 .app__title-highlight {
