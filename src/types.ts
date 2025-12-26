@@ -1,10 +1,4 @@
-export type UserRole =
-  | "ADMIN"
-  | "EDITOR"
-  | "VIEWER"
-  | "GUEST"
-  | "OWNER"
-  | "INACTIVE";
+export type UserRole = "ADMIN" | "EDITOR" | "VIEWER" | "GUEST" | "OWNER" | "INACTIVE";
 
 export interface User {
   id: number;

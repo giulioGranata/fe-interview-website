@@ -9,11 +9,7 @@ interface RoleBadgeProps {
 export function RoleBadge({ role, className = "" }: RoleBadgeProps) {
   return (
     <div>
-      <span
-        className={`role-badge role-badge--${role.toLowerCase()} ${className}`}
-      >
-        {role}
-      </span>
+      <span className={`role-badge role-badge--${role.toLowerCase()} ${className}`}>{role}</span>
     </div>
   );
 }

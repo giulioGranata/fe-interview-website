@@ -26,9 +26,7 @@ export function UserCard({ user, onViewDetails }: UserCardProps) {
           </div>
           <div className="user-card__info-item">
             <span className="user-card__info-label">Contact Information</span>
-            <span className="user-card__info-value user-card__email">
-              {user.email}
-            </span>
+            <span className="user-card__info-value user-card__email">{user.email}</span>
           </div>
         </div>
       </div>

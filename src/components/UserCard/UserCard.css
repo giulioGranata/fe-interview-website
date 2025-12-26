@@ -5,7 +5,8 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: box-shadow var(--transition-normal),
+  transition:
+    box-shadow var(--transition-normal),
     transform var(--transition-normal);
 }
 

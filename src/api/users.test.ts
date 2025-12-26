@@ -92,9 +92,7 @@ describe("filterUsersByRole", () => {
   it("filters by multiple roles", () => {
     const result = filterUsersByRole(mockUsers, ["ADMIN", "EDITOR"]);
     expect(result).toHaveLength(3);
-    expect(result.every((u) => ["ADMIN", "EDITOR"].includes(u.role))).toBe(
-      true
-    );
+    expect(result.every((u) => ["ADMIN", "EDITOR"].includes(u.role))).toBe(true);
   });
 
   it("returns empty array when no matching roles", () => {

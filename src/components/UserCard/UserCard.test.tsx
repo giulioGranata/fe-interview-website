@@ -73,8 +73,6 @@ describe("UserCard", () => {
 
     render(<UserCard user={mockUser} onViewDetails={onViewDetails} />);
 
-    expect(
-      screen.getByRole("article", { name: /user card for john doe/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("article", { name: /user card for john doe/i })).toBeInTheDocument();
   });
 });
