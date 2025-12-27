@@ -28,6 +28,10 @@
   color: var(--color-text-secondary);
   line-height: var(--line-height-normal);
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 .user-card__info {
@@ -55,12 +59,19 @@
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-normal);
   color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 .user-card__email {
-  word-break: break-all;
-  color: #fb6232;
+  color: var(--color-primary) !important;
   text-decoration: underline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 .user-card__footer {
