@@ -2,17 +2,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xs) var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  line-height: 1;
+  line-height: var(--line-height-tight);
+  border-radius: var(--radius-md);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1em;
   color: white;
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
 }
 
+/* Variant Styles */
 .role-badge--admin {
   background-color: var(--color-role-admin);
 }
@@ -34,5 +34,7 @@
 }
 
 .role-badge--inactive {
-  background-color: var(--color-role-inactive);
+  background-color: #ffffff !important;
+  color: #292929 !important;
+  border: 1px solid #d3d3dc;
 }

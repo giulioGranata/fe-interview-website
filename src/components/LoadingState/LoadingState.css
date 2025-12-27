@@ -14,7 +14,12 @@
 }
 
 .skeleton {
-  background: linear-gradient(90deg, var(--color-border) 25%, #f0f0f0 50%, var(--color-border) 75%);
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    #f0f0f0 50%,
+    var(--color-border) 75%
+  );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: var(--radius-sm);
@@ -42,17 +47,17 @@
 }
 
 .loading-state__name {
-  height: 20px;
+  height: var(--font-size-title-sm);
   width: 70%;
 }
 
 .loading-state__title {
-  height: 16px;
+  height: var(--font-size-lg);
   width: 50%;
 }
 
 .loading-state__info {
-  height: 14px;
+  height: var(--font-size-md);
   width: 80%;
 }
 

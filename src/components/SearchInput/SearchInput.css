@@ -47,8 +47,11 @@
 
 .search-input__button {
   margin: var(--spacing-xs);
-  padding: var(--spacing-lg) var(--spacing-xl);
+  padding: 0 var(--spacing-xl);
+  height: 78px !important;
   font-size: var(--font-size-lg);
+  border-radius: var(--radius-lg) !important;
+  border: none;
 }
 
 /* Responsive */

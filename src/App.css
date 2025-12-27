@@ -80,6 +80,6 @@
   }
 
   .app__title {
-    font-size: 20px;
+    font-size: var(--font-size-title-sm);
   }
 }

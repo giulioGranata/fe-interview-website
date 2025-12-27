@@ -4,13 +4,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   padding-bottom: 0;
 }
 
 .user-card__body {
   flex: 1;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -20,11 +20,13 @@
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
+  line-height: var(--line-height-title);
 }
 
 .user-card__job-title {
   font-size: var(--font-size-md);
   color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
   letter-spacing: 0.02em;
 }
 
@@ -32,29 +34,37 @@
   margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
 }
 
 .user-card__info-item {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--spacing-xxs);
 }
 
 .user-card__info-label {
-  /* Some properties inherited from .text-label in index.css */
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-light);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
 }
 
 .user-card__info-value {
-  /* Some properties inherited from .text-value in index.css */
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
 }
 
 .user-card__email {
   word-break: break-all;
+  color: #fb6232;
+  text-decoration: underline;
 }
 
 .user-card__footer {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   padding-top: 0;
 }
 

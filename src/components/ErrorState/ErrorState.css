@@ -9,7 +9,7 @@
 }
 
 .error-state__icon {
-  font-size: 48px;
+  font-size: var(--font-size-icon-lg);
 }
 
 .error-state__title {
