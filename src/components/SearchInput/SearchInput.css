@@ -1,21 +1,23 @@
+/* SearchInput - Using Design System Variables */
+
 .search-input {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 16px;
+  padding: 0;
+  gap: var(--spacing-md);
   width: 669px;
 }
 
 .search-input__label {
-  font-family: "Poppins";
+  font-family: var(--font-family);
   font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 170%;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #63666a;
+  color: var(--color-text-secondary);
   width: 100%;
 }
 
@@ -23,8 +25,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
-  gap: 20px;
+  padding: 0;
+  gap: var(--spacing-lg);
   width: 100%;
   height: 78px;
 }
@@ -33,11 +35,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 var(--spacing-lg);
   width: 500px;
   height: 78px;
-  background: #ffffff;
-  border-radius: 20px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
   box-sizing: border-box;
 }
 
@@ -45,19 +47,19 @@
   flex: 1;
   width: 100%;
   height: 100%;
-  font-family: "Poppins";
+  font-family: var(--font-family);
   font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 170%;
-  color: #63666a;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
   background: transparent;
   border: none;
   outline: none;
 }
 
 .search-input__field::placeholder {
-  color: #63666a;
+  color: var(--color-text-secondary);
 }
 
 .search-input__field:focus {
@@ -70,26 +72,26 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px 30px;
-  gap: 8px;
+  padding: 0 30px;
+  gap: var(--spacing-sm);
   width: 125px;
   height: 78px;
-  background: #fb6232;
-  border-radius: 20px;
+  background: var(--color-primary);
+  border-radius: var(--radius-lg);
   border: none;
-  font-family: "Poppins";
+  font-family: var(--font-family);
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
   line-height: 16px;
   letter-spacing: 0.1em;
-  color: #ffffff;
+  color: var(--color-surface);
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transition-fast);
 }
 
 .search-input__button:hover {
-  background: #e54a0f;
+  background: var(--color-primary-hover);
 }
 
 /* Responsive */
@@ -102,7 +104,7 @@
   .search-input__wrapper {
     flex-direction: column;
     height: auto;
-    gap: 16px;
+    gap: var(--spacing-md);
   }
 
   .search-input__container {

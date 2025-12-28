@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #f5f5f5;
+  background: var(--color-background);
 }
 
 /* Main content wrapper - centers everything */
@@ -11,12 +11,12 @@
   flex-direction: column;
   align-items: center;
   padding-top: 100px;
-  gap: 32px;
+  gap: var(--spacing-xl);
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
   box-sizing: border-box;
 }
 
@@ -26,17 +26,17 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 10px;
   width: 100%;
   height: 90px;
 }
 
 .app__title {
-  font-family: "Poppins";
+  font-family: var(--font-family);
   font-style: normal;
-  font-weight: 700;
-  font-size: 60px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-app-title);
   line-height: 90px;
   text-align: center;
   margin: 0;
@@ -50,7 +50,7 @@
 }
 
 .app__title-dark {
-  color: #1b2134;
+  color: var(--color-text-primary);
 }
 
 /* Main */
@@ -64,8 +64,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
-  gap: 16px;
+  padding: 0;
+  gap: var(--spacing-md);
   width: 100%;
   max-width: 669px;
 }
@@ -75,18 +75,18 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px 16px;
+  padding: 0 var(--spacing-md);
   gap: 15px;
   width: 100%;
   max-width: 1024px;
-  margin: 32px auto 0;
+  margin: var(--spacing-xl) auto 0;
   box-sizing: border-box;
 }
 
 .app__filter-divider {
   width: 100%;
   height: 1px;
-  background: #63666a;
+  background: var(--color-text-secondary);
 }
 
 /* Results Section */
@@ -94,7 +94,7 @@
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
-  padding: 32px 16px;
+  padding: var(--spacing-xl) var(--spacing-md);
   box-sizing: border-box;
 }
 
@@ -102,7 +102,7 @@
 .user-grid {
   display: grid;
   grid-template-columns: repeat(4, 247px);
-  gap: 12px;
+  gap: var(--spacing-sm-md);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -150,7 +150,7 @@
   }
 
   .app__title {
-    font-size: 32px;
+    font-size: var(--font-size-title);
     line-height: 48px;
   }
 

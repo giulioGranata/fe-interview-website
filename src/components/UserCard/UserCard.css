@@ -1,21 +1,23 @@
-/* UserCard - Figma Specifications */
+/* UserCard - Using Design System Variables */
 
 .user-card {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 16px;
-  gap: 16px;
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
   width: 247px;
   height: 295px;
-  background: #ffffff;
-  border: 1px solid #d3d3dc;
-  border-radius: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: box-shadow var(--transition-normal),
+    transform var(--transition-normal);
 }
 
 .user-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 
@@ -24,18 +26,18 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
+  padding: 0;
+  gap: var(--spacing-sm);
   width: 215px;
 }
 
 .user-card__name {
-  font-family: "Poppins";
+  font-family: var(--font-family);
   font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 130%;
-  color: #1b2134;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-title);
+  line-height: var(--line-height-title);
+  color: var(--color-text-primary);
   width: 215px;
   white-space: nowrap;
   overflow: hidden;
@@ -43,13 +45,13 @@
 }
 
 .user-card__job-title {
-  font-family: "Poppins";
+  font-family: var(--font-family);
   font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 170%;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
   letter-spacing: 0.02em;
-  color: #63666a;
+  color: var(--color-text-secondary);
   width: 215px;
   white-space: nowrap;
   overflow: hidden;
@@ -61,8 +63,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
+  padding: 0;
+  gap: var(--spacing-sm-md);
   width: 215px;
   flex: 1;
 }
@@ -71,8 +73,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
+  padding: 0;
+  gap: var(--spacing-sm-md);
   width: 215px;
 }
 
@@ -80,27 +82,27 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   width: 215px;
 }
 
 .user-card__info-label {
-  font-family: "Poppins";
+  font-family: var(--font-family);
   font-style: normal;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 170%;
-  color: #63666a;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
   width: 215px;
 }
 
 .user-card__info-value {
-  font-family: "Poppins";
+  font-family: var(--font-family);
   font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 170%;
-  color: #63666a;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
   width: 215px;
   white-space: nowrap;
   overflow: hidden;
@@ -108,12 +110,12 @@
 }
 
 .user-card__email {
-  font-family: "Poppins";
+  font-family: var(--font-family);
   font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 170%;
-  color: #fb6232 !important;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--color-primary) !important;
   text-decoration: underline;
   width: 215px;
   white-space: nowrap;
@@ -132,26 +134,26 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px 30px;
-  gap: 8px;
+  padding: 0 30px;
+  gap: var(--spacing-sm);
   width: 215px;
   height: 48px;
-  background: #fb6232;
+  background: var(--color-primary);
   border-radius: 16px;
   border: none;
-  font-family: "Poppins";
+  font-family: var(--font-family);
   font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-md);
   line-height: 16px;
   letter-spacing: 0.1em;
-  color: #ffffff;
+  color: var(--color-surface);
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transition-fast);
 }
 
 .user-card__button:hover {
-  background: #e54a0f;
+  background: var(--color-primary-hover);
 }
 
 /* Responsive - Mobile */
