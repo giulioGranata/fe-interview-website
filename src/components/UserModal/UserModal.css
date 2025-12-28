@@ -90,6 +90,16 @@
   /* Base styles in .text-value */
 }
 
+.user-modal__email {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 170%;
+  color: #fb6232;
+  text-decoration: underline;
+}
+
 .user-modal__details {
   display: flex;
   flex-direction: column;

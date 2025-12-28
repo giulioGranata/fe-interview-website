@@ -85,9 +85,9 @@ export function UserModal({ user, isOpen, onClose }: UserModalProps) {
             </div>
             <div className="user-modal__info-item">
               <span className="user-modal__info-label text-label">
-                Contact Information
+                Contact information:
               </span>
-              <span className="user-modal__info-value text-value">
+              <span className="user-modal__info-value user-modal__email">
                 {user.email}
               </span>
             </div>
