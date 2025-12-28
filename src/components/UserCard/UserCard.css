@@ -1,85 +1,181 @@
-/* Base Card Styles are now in index.css .card */
+/* UserCard - Figma Specifications */
 
+.user-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 16px;
+  width: 247px;
+  height: 295px;
+  background: #ffffff;
+  border: 1px solid #d3d3dc;
+  border-radius: 20px;
+}
+
+.user-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Header section with badge and name */
 .user-card__header {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
-  padding: var(--spacing-md);
-  padding-bottom: 0;
-}
-
-.user-card__body {
-  flex: 1;
-  padding: var(--spacing-md);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-  width: 247px;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  width: 215px;
 }
 
 .user-card__name {
-  font-size: var(--font-size-title);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-primary);
-  line-height: var(--line-height-title);
-}
-
-.user-card__job-title {
-  font-size: var(--font-size-md);
-  color: var(--color-text-secondary);
-  line-height: var(--line-height-normal);
-  letter-spacing: 0.02em;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  color: #1b2134;
+  width: 215px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: block;
+}
+
+.user-card__job-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+  letter-spacing: 0.02em;
+  color: #63666a;
+  width: 215px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Body section with info */
+.user-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  width: 215px;
+  flex: 1;
 }
 
 .user-card__info {
-  margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  width: 215px;
 }
 
 .user-card__info-item {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xxs);
+  align-items: flex-start;
+  padding: 0px;
+  width: 215px;
 }
 
 .user-card__info-label {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-light);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-secondary);
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 170%;
+  color: #63666a;
+  width: 215px;
 }
 
 .user-card__info-value {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-secondary);
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 170%;
+  color: #63666a;
+  width: 215px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: block;
 }
 
 .user-card__email {
-  color: var(--color-primary) !important;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 170%;
+  color: #fb6232 !important;
   text-decoration: underline;
+  width: 215px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: block;
 }
 
+/* Footer with button */
 .user-card__footer {
-  padding: var(--spacing-md);
-  padding-top: 0;
+  width: 215px;
 }
 
+/* Button Size=M */
 .user-card__button {
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 30px;
+  gap: 8px;
+  width: 215px;
+  height: 48px;
+  background: #fb6232;
+  border-radius: 16px;
+  border: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.user-card__button:hover {
+  background: #e54a0f;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 550px) {
+  .user-card {
+    width: 100%;
+    height: auto;
+    min-height: 295px;
+  }
+
+  .user-card__header,
+  .user-card__body,
+  .user-card__info,
+  .user-card__info-item,
+  .user-card__info-label,
+  .user-card__info-value,
+  .user-card__email,
+  .user-card__footer,
+  .user-card__name,
+  .user-card__job-title {
+    width: 100%;
+  }
+
+  .user-card__button {
+    width: 100%;
+  }
 }

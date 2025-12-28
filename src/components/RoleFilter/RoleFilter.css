@@ -1,94 +1,111 @@
+/* RoleFilter - Figma Specifications */
+
 .role-filter {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
-  gap: var(--spacing-md);
-  border: none;
-  padding: 0;
-  margin: 0;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
   width: 100%;
+  border: none;
 }
 
 .role-filter__label {
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 170%;
+  letter-spacing: 0.02em;
+  color: #63666a;
+  white-space: nowrap;
 }
 
 .role-filter__options {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--spacing-sm);
+  border: none;
 }
 
+/* Badge-style buttons - default unselected state */
 .role-filter__button {
-  padding: var(--spacing-xs) var(--spacing-md);
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-medium);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 10px;
+  height: 24px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 8px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--color-text-secondary);
-  background-color: var(--color-surface);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  transition: all var(--transition-fast);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  color: #292929;
+  outline: none;
 }
 
 .role-filter__button:hover {
-  border-color: var(--color-text-tertiary);
+  opacity: 0.8;
+}
+
+.role-filter__button:focus {
+  outline: none;
 }
 
 /* Selected states with role colors */
 .role-filter__button--selected.role-filter__button--admin {
-  color: white;
-  background-color: var(--color-role-admin);
-  border-color: var(--color-role-admin);
+  background: #003569;
+  color: #ffffff;
 }
 
 .role-filter__button--selected.role-filter__button--editor {
-  color: white;
-  background-color: var(--color-role-editor);
-  border-color: var(--color-role-editor);
+  background: #269085;
+  color: #ffffff;
 }
 
 .role-filter__button--selected.role-filter__button--viewer {
-  color: white;
-  background-color: var(--color-role-viewer);
-  border-color: var(--color-role-viewer);
+  background: #5993b9;
+  color: #ffffff;
 }
 
 .role-filter__button--selected.role-filter__button--guest {
-  color: white;
-  background-color: var(--color-role-guest);
-  border-color: var(--color-role-guest);
+  background: #9f009f;
+  color: #ffffff;
 }
 
+/* Owner and Inactive stay white with dark text when selected */
 .role-filter__button--selected.role-filter__button--owner {
-  color: white;
-  background-color: var(--color-role-owner);
-  border-color: var(--color-role-owner);
+  background: #ffffff;
+  color: #292929;
+  border: 1px solid #d3d3dc;
 }
 
 .role-filter__button--selected.role-filter__button--inactive {
-  color: white;
-  background-color: var(--color-role-inactive);
-  border-color: var(--color-role-inactive);
+  background: #ffffff;
+  color: #292929;
+  border: 1px solid #d3d3dc;
 }
 
 /* Responsive */
-@media (max-width: 599px) {
+@media (max-width: 768px) {
   .role-filter {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap: 12px;
   }
 
-  .role-filter__label {
-    text-align: center;
-    margin-bottom: var(--spacing-xs);
+  .role-filter__options {
+    width: 100%;
   }
 }

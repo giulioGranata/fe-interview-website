@@ -10,10 +10,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 186px;
+  padding-top: 100px;
   gap: 32px;
-  width: 669px;
+  width: 100%;
+  max-width: 1024px;
   margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -24,7 +28,7 @@
   align-items: center;
   padding: 0px;
   gap: 10px;
-  width: 669px;
+  width: 100%;
   height: 90px;
 }
 
@@ -52,32 +56,57 @@
 /* Main */
 .app__main {
   flex: 1;
+  width: 100%;
 }
 
 /* Search Section */
 .app__search-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 0px;
   gap: 16px;
-  width: 669px;
+  width: 100%;
+  max-width: 669px;
+}
+
+/* Filter Section */
+.app__filter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 16px;
+  gap: 15px;
+  width: 100%;
+  max-width: 1024px;
+  margin: 32px auto 0;
+  box-sizing: border-box;
+}
+
+.app__filter-divider {
+  width: 100%;
+  height: 1px;
+  background: #63666a;
 }
 
 /* Results Section */
 .app__results-section {
-  min-height: 200px;
-  padding-top: var(--spacing-xl);
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  box-sizing: border-box;
 }
 
-/* User Grid */
+/* User Grid - Desktop: 4 columns */
 .user-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(4, 247px);
+  gap: 12px;
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: center;
 }
 
 .user-grid__item {
@@ -85,28 +114,47 @@
 }
 
 /* Responsive Grid */
-@media (max-width: 1199px) {
+@media (max-width: 1080px) {
   .user-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 247px);
   }
 }
 
-@media (max-width: 899px) {
+@media (max-width: 800px) {
   .user-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 599px) {
-  .user-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .app__header {
-    padding: var(--spacing-lg) 0;
+    grid-template-columns: repeat(2, 247px);
   }
 
   .app__title {
-    font-size: var(--font-size-title-sm);
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 550px) {
+  .user-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .user-grid__item {
+    width: 100%;
+  }
+
+  .app__content-wrapper {
+    padding-top: 60px;
+  }
+
+  .app__header {
+    height: auto;
+  }
+
+  .app__title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .app__search-section {
+    max-width: 100%;
   }
 }

@@ -1,40 +1,47 @@
+/* RoleBadge - Figma Specifications */
+
 .role-badge {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding: var(--spacing-sm) var(--spacing-md);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-tight);
-  border-radius: var(--radius-md);
-  text-transform: uppercase;
+  padding: 8px 16px;
+  gap: 10px;
+  height: 24px;
+  border-radius: 8px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 8px;
+  text-align: right;
   letter-spacing: 0.1em;
-  color: white;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 /* Variant Styles */
 .role-badge--admin {
-  background-color: var(--color-role-admin);
+  background: #003569;
 }
 
 .role-badge--editor {
-  background-color: var(--color-role-editor);
+  background: #269085;
 }
 
 .role-badge--viewer {
-  background-color: var(--color-role-viewer);
+  background: #5993b9;
 }
 
 .role-badge--guest {
-  background-color: var(--color-role-guest);
+  background: #9f009f;
 }
 
 .role-badge--owner {
-  background-color: var(--color-role-owner);
+  background: #ffffff;
+  color: #292929;
 }
 
 .role-badge--inactive {
-  background-color: #ffffff !important;
-  color: #292929 !important;
-  border: 1px solid #d3d3dc;
+  background: #ffffff;
+  color: #292929;
 }

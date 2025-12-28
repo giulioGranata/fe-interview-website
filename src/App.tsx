@@ -4,6 +4,7 @@ import "./App.css";
 import { EmptyState } from "./components/EmptyState/EmptyState";
 import { ErrorState } from "./components/ErrorState/ErrorState";
 import { LoadingState } from "./components/LoadingState/LoadingState";
+import { RoleFilter } from "./components/RoleFilter/RoleFilter";
 import { SearchInput } from "./components/SearchInput/SearchInput";
 import { UserCard } from "./components/UserCard/UserCard";
 import { UserModal } from "./components/UserModal/UserModal";
@@ -138,11 +139,19 @@ export function App() {
       </div>
 
       <main className="app__main">
-        <div className="container">
-          <section className="app__results-section" aria-label="Search results">
-            {renderContent()}
+        {searchPerformed && (
+          <section className="app__filter-section" aria-label="Filters">
+            <RoleFilter
+              selectedRoles={selectedRoles}
+              onChange={handleRoleChange}
+            />
+            <div className="app__filter-divider" />
           </section>
-        </div>
+        )}
+
+        <section className="app__results-section" aria-label="Search results">
+          {renderContent()}
+        </section>
       </main>
 
       <UserModal
