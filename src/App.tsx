@@ -4,7 +4,6 @@ import "./App.css";
 import { EmptyState } from "./components/EmptyState/EmptyState";
 import { ErrorState } from "./components/ErrorState/ErrorState";
 import { LoadingState } from "./components/LoadingState/LoadingState";
-import { RoleFilter } from "./components/RoleFilter/RoleFilter";
 import { SearchInput } from "./components/SearchInput/SearchInput";
 import { UserCard } from "./components/UserCard/UserCard";
 import { UserModal } from "./components/UserModal/UserModal";
@@ -20,6 +19,7 @@ export function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [appliedSearchQuery, setAppliedSearchQuery] = useState("");
   const [selectedRoles, setSelectedRoles] = useState<UserRole[]>([]);
+  const [searchPerformed, setSearchPerformed] = useState(false);
 
   // Modal state
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
@@ -34,7 +34,9 @@ export function App() {
       const data = await fetchUsers();
       setUsers(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An unexpected error occurred");
+      setError(
+        err instanceof Error ? err.message : "An unexpected error occurred"
+      );
     } finally {
       setLoading(false);
     }
@@ -47,12 +49,16 @@ export function App() {
   // Handle search
   const handleSearch = useCallback(() => {
     setAppliedSearchQuery(searchQuery);
+    setSearchPerformed(true);
   }, [searchQuery]);
 
   const handleSearchChange = useCallback((value: string) => {
     setSearchQuery(value);
     // Apply search immediately as user types
     setAppliedSearchQuery(value);
+    if (value.length > 0) {
+      setSearchPerformed(true);
+    }
   }, []);
 
   // Handle role filter
@@ -76,6 +82,11 @@ export function App() {
 
   // Render content based on state
   const renderContent = () => {
+    // Don't show anything until search is performed
+    if (!searchPerformed) {
+      return null;
+    }
+
     if (loading) {
       return <LoadingState />;
     }
@@ -85,7 +96,12 @@ export function App() {
     }
 
     if (filteredUsers.length === 0) {
-      return <EmptyState searchQuery={appliedSearchQuery} hasFilters={selectedRoles.length > 0} />;
+      return (
+        <EmptyState
+          searchQuery={appliedSearchQuery}
+          hasFilters={selectedRoles.length > 0}
+        />
+      );
     }
 
     return (
@@ -101,32 +117,39 @@ export function App() {
 
   return (
     <div className="app">
-      <header className="app__header">
-        <div className="container">
+      <div className="app__content-wrapper">
+        <header className="app__header">
           <h1 className="app__title">
-            <span className="app__title-highlight">User</span> Dashboard
+            <span className="app__title-highlight">User</span>{" "}
+            <span className="app__title-dark">Dashboard</span>
           </h1>
-        </div>
-      </header>
+        </header>
+
+        <section
+          className="app__search-section"
+          aria-label="Search and filters"
+        >
+          <SearchInput
+            value={searchQuery}
+            onChange={handleSearchChange}
+            onSearch={handleSearch}
+          />
+        </section>
+      </div>
 
       <main className="app__main">
         <div className="container">
-          <section className="app__search-section" aria-label="Search and filters">
-            <SearchInput
-              value={searchQuery}
-              onChange={handleSearchChange}
-              onSearch={handleSearch}
-            />
-            <RoleFilter selectedRoles={selectedRoles} onChange={handleRoleChange} />
-          </section>
-
           <section className="app__results-section" aria-label="Search results">
             {renderContent()}
           </section>
         </div>
       </main>
 
-      <UserModal user={selectedUser} isOpen={isModalOpen} onClose={handleCloseModal} />
+      <UserModal
+        user={selectedUser}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 }

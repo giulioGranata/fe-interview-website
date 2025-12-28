@@ -12,7 +12,7 @@ export function SearchInput({
   value,
   onChange,
   onSearch,
-  placeholder = "Search by name...",
+  placeholder = "Search by user name or email",
 }: SearchInputProps) {
   const [inputValue, setInputValue] = useState(value);
 
@@ -59,7 +59,7 @@ export function SearchInput({
         <button
           id="search-input-button"
           type="button"
-          className="search-input__button btn-primary"
+          className="search-input__button"
           onClick={handleSearchClick}
           aria-label="Clear search and fetch results"
         >
