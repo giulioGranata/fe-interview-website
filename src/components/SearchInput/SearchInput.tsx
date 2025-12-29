@@ -22,7 +22,7 @@ export function SearchInput({
       setInputValue(newValue);
       onChange(newValue);
     },
-    [onChange]
+    [onChange],
   );
 
   const handleKeyDown = useCallback(
@@ -31,7 +31,7 @@ export function SearchInput({
         onSearch();
       }
     },
-    [onSearch]
+    [onSearch],
   );
 
   const handleSearchClick = useCallback(() => {

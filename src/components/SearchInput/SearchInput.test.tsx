@@ -10,7 +10,7 @@ describe("SearchInput", () => {
 
     render(<SearchInput value="" onChange={onChange} onSearch={onSearch} />);
 
-    expect(screen.getByPlaceholderText("Search by name...")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Search by user name or email")).toBeInTheDocument();
   });
 
   it("renders with custom placeholder", () => {
@@ -36,7 +36,7 @@ describe("SearchInput", () => {
 
     render(<SearchInput value="" onChange={onChange} onSearch={onSearch} />);
 
-    const input = screen.getByPlaceholderText("Search by name...");
+    const input = screen.getByPlaceholderText("Search by user name or email");
     await user.type(input, "john");
 
     expect(onChange).toHaveBeenCalled();
@@ -62,7 +62,7 @@ describe("SearchInput", () => {
 
     render(<SearchInput value="" onChange={onChange} onSearch={onSearch} />);
 
-    const input = screen.getByPlaceholderText("Search by name...");
+    const input = screen.getByPlaceholderText("Search by user name or email");
     await user.type(input, "{enter}");
 
     expect(onSearch).toHaveBeenCalledTimes(1);

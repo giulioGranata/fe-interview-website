@@ -35,9 +35,7 @@ export function App() {
       const data = await fetchUsers();
       setUsers(data);
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : "An unexpected error occurred"
-      );
+      setError(err instanceof Error ? err.message : "An unexpected error occurred");
     } finally {
       setLoading(false);
     }
@@ -97,12 +95,7 @@ export function App() {
     }
 
     if (filteredUsers.length === 0) {
-      return (
-        <EmptyState
-          searchQuery={appliedSearchQuery}
-          hasFilters={selectedRoles.length > 0}
-        />
-      );
+      return <EmptyState searchQuery={appliedSearchQuery} hasFilters={selectedRoles.length > 0} />;
     }
 
     return (
@@ -126,25 +119,15 @@ export function App() {
           </h1>
         </header>
 
-        <section
-          className="app__search-section"
-          aria-label="Search and filters"
-        >
-          <SearchInput
-            value={searchQuery}
-            onChange={handleSearchChange}
-            onSearch={handleSearch}
-          />
+        <section className="app__search-section" aria-label="Search and filters">
+          <SearchInput value={searchQuery} onChange={handleSearchChange} onSearch={handleSearch} />
         </section>
       </div>
 
       <main className="app__main">
         {searchPerformed && (
           <section className="app__filter-section" aria-label="Filters">
-            <RoleFilter
-              selectedRoles={selectedRoles}
-              onChange={handleRoleChange}
-            />
+            <RoleFilter selectedRoles={selectedRoles} onChange={handleRoleChange} />
             <div className="app__filter-divider" />
           </section>
         )}
@@ -154,11 +137,7 @@ export function App() {
         </section>
       </main>
 
-      <UserModal
-        user={selectedUser}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      />
+      <UserModal user={selectedUser} isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 }
