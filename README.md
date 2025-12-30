@@ -2,8 +2,6 @@
 
 A responsive, accessible, and type-safe React application developed as a coding challenge. The application allows searching, filtering, and viewing details of users fetched from a dummy API.
 
-![Project Preview](https://via.placeholder.com/800x400?text=User+Dashboard+Preview)
-
 ## 🚀 Features
 
 - **Search Functionality**: Real-time filtering by user name or email.
