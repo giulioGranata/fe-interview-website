@@ -1,0 +1,47 @@
+/* RoleBadge - Using Design System Variables */
+
+.role-badge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  gap: 10px;
+  height: 24px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  line-height: 8px;
+  text-align: right;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-surface);
+}
+
+/* Variant Styles */
+.role-badge--admin {
+  background: var(--color-role-admin);
+}
+
+.role-badge--editor {
+  background: var(--color-role-editor);
+}
+
+.role-badge--viewer {
+  background: var(--color-role-viewer);
+}
+
+.role-badge--guest {
+  background: var(--color-role-guest);
+}
+
+.role-badge--owner {
+  background: var(--color-role-owner);
+  color: var(--color-surface);
+}
+
+.role-badge--inactive {
+  background: var(--color-role-inactive);
+  color: var(--color-surface);
+}

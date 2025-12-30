@@ -1,23 +1,81 @@
-# Frontend Interview - Website
+# User Dashboard - Frontend Interview Project
 
-Hey 👋
+A responsive, accessible, and type-safe React application developed as a coding challenge. The application allows searching, filtering, and viewing details of users fetched from a dummy API.
 
-This is the base repository for the home test. The repository is created with `vite` and is empty, but contains some packages already installed, in particular:
+## 🚀 Features
 
-- `react`
-- `vitest`
+- **Search Functionality**: Real-time filtering by user name or email.
+- **Role Filtering**: Filter users by roles (Admin, Editor, Viewer, etc.).
+- **Responsive Layout**:
+  - Desktop: 4-column grid
+  - Tablet: 2/3-column grid
+  - Mobile: Single column with optimized touch targets
+- **User Details**: Modal view with comprehensive accessibility support (focus trap, ARIA labels).
+- **Robust States**: Dedicated empty, loading (skeleton), and error states.
+- **No Utility Libraries**: Styled entirely with Vanilla CSS using CSS Variables for theming.
 
-## Install and run
+## 🛠️ Tech Stack
+
+- **Framework**: React 19 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Vanilla CSS (CSS Modules / BEM naming convention)
+- **State Management**: React Hooks (useState, useEffect, useMemo, useCallback)
+- **Testing**: Vitest + React Testing Library
+- **Linting/Formatting**: Biome
+
+## 📦 Installation & Running
+
+This project uses **pnpm**.
 
 ```bash
-# Install dependencies
-# This project use `pnpm` as package manager, but you can use also `npm` or `yarn`.
+# 1. Install dependencies
 pnpm install
 
-# And run the project
+# 2. Start development server
 pnpm dev
 ```
 
-## Figma file
+## ✅ Quality Checks
 
-The figma file of the home test is available [here](https://www.figma.com/design/ESP3mNtKRj1aI458c08QBb/%F0%9F%92%BB-Website-Home-Test?node-id=0-1&t=tmrCaYq4wADJCHvD-1).
+### Testing
+
+The project includes a comprehensive test suite covering API logic and components.
+
+```bash
+# Run unit tests
+pnpm test
+```
+
+### Linting & Formatting
+
+Code quality is enforced using Biome.
+
+```bash
+# Check code quality
+pnpm check
+
+# Fix formatting issues
+pnpm check:fix
+```
+
+## ♿ Accessibility
+
+- Semantic HTML structure
+- `aria-label` and `aria-live` regions for dynamic content
+- Keyboard navigation support (Tab indexing, ESC to close modal)
+- Focus management for modal dialogs
+- Color contrast compliant
+
+## 📂 Project Structure
+
+```
+src/
+├── api/            # API integration and transformation logic
+├── components/     # UI Components (Atomic design inspired)
+│   ├── RoleFilter/
+│   ├── SearchInput/
+│   ├── UserCard/
+│   └── ...
+├── types.ts        # Shared TypeScript interfaces
+└── App.tsx         # Main application logic
+```
